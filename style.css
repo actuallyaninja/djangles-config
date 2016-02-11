@@ -15,5 +15,9 @@ html{
 img.shrink{
 	width:72px;
 	height:84px;
-	text-align: center;
+}
+
+img.shrinksq{
+	width:84px;
+	height:84px;
 }
