@@ -21,6 +21,8 @@ function loadOptions() {
     var $slantDirectionNumber = $('#slantDirectionNumber');
     var $backgroundImageSelection = $('#backgroundImageSelection');
 	//var $bgPatternRadioButton = $('#bgPatternRadioButton');  
+	var $bgPatternRadioButton = $('input[name="radio-1"]:checked').val();
+	
 
 
     if (localStorage.slantDirectionNumber) {
@@ -28,7 +30,7 @@ function loadOptions() {
         $slantDirectionNumber[0].value = localStorage.slantDirectionNumber;
         $backgroundImageSelection[0].value = localStorage.backgroundImageSelection;
 		//$bgPatternRadioButton[0].value = localStorage.bgPatternRadioButton;
-    
+		$bgPatternRadioButton[0].value = $('input[name="radio-1"][value="' + localStorage.bgPatternRadioButton + '"]').prop('checked', true);
     }
 }
 
@@ -37,19 +39,20 @@ function getAndStoreConfigData() {
         
     var $slantDirectionNumber = $('#slantDirectionNumber');  
     var $backgroundImageSelection = $('#backgroundImageSelection');  
-	//var $bgPatternRadioButton = $('#bgPatternRadioButton');
+	var $bgPatternRadioButton = $('input[name="radio-1"]:checked').val();
+	
     
     var options = {
         
         slantDirectionNumber: $slantDirectionNumber.val(),
         backgroundImageSelection: $backgroundImageSelection.val(),
-		//bgPatternRadioButton: $bgPatternRadioButton.val()
+		bgPatternRadioButton: $bgPatternRadioButton
 
     };
 
     localStorage.slantDirectionNumber = options.slantDirectionNumber;
     localStorage.backgroundImageSelection = options.backgroundImageSelection;
-//	localStorage.bgPatternRadioButton = options.bgPatternRadioButton;
+	localStorage.bgPatternRadioButton = options.bgPatternRadioButton;
 
     console.log('Got options: ' + JSON.stringify(options));
     return options;
