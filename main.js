@@ -17,42 +17,39 @@ function submitHandler() {
 
 function loadOptions() {
 
-    //var $slantDirectionSelection = $('#slantDirectionSelection');
+    
     var $slantDirectionNumber = $('#slantDirectionNumber');
     var $backgroundImageSelection = $('#backgroundImageSelection');
-    //var $backgroundColorPicker = $('#backgroundColorPicker');
+	//var $bgPatternRadioButton = $('#bgPatternRadioButton');  
 
 
     if (localStorage.slantDirectionNumber) {
-        // $slantDirectionSelection[0].checked = localStorage.slantDirection == 'true';
+    
         $slantDirectionNumber[0].value = localStorage.slantDirectionNumber;
         $backgroundImageSelection[0].value = localStorage.backgroundImageSelection;
-        //$backgroundColorPicker[0].value = localStorage.backgroundColor;
+		//$bgPatternRadioButton[0].value = localStorage.bgPatternRadioButton;
+    
     }
 }
 
 function getAndStoreConfigData() {
 
-    
-    //var $slantDirectionNumber = $('#slantDirectionNumber');
-    var $slantDirectionNumber = $('#slantDirectionNumber').tabs();
-
-    var $backgroundImageSelection = $('#backgroundImageSelection');
+        
+    var $slantDirectionNumber = $('#slantDirectionNumber');  
+    var $backgroundImageSelection = $('#backgroundImageSelection');  
+	//var $bgPatternRadioButton = $('#bgPatternRadioButton');
     
     var options = {
-
         
         slantDirectionNumber: $slantDirectionNumber.val(),
-        //slantDirectionNumber: $slantDirectionNumber.tabs('option', 'active'),
-        backgroundImageSelection: $backgroundImageSelection.val()
-        
+        backgroundImageSelection: $backgroundImageSelection.val(),
+		//bgPatternRadioButton: $bgPatternRadioButton.val()
 
     };
 
-    //localStorage.slantDirection = options.slantDirection;
     localStorage.slantDirectionNumber = options.slantDirectionNumber;
     localStorage.backgroundImageSelection = options.backgroundImageSelection;
-    //localStorage.backgroundColor = options.backgroundColor;
+//	localStorage.bgPatternRadioButton = options.bgPatternRadioButton;
 
     console.log('Got options: ' + JSON.stringify(options));
     return options;
