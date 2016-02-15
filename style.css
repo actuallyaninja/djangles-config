@@ -12,12 +12,12 @@ html{
     font-size: 100%;
 }
 
-img.shrink{
+.shrink{
 	width:72px;
 	height:84px;
 }
 
-img.shrinksq{
+.shrinksq{
 	width:84px;
 	height:84px;
 }

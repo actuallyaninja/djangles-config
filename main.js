@@ -1,8 +1,13 @@
 ﻿(function () {
     loadOptions();
-    showHideImagesByPlatform();
+    //showHideImagesByPlatform("chalk");
+	showHideImagesByPlatform(getURLParameter("platform"));
 	submitHandler();
 })();
+
+function getURLParameter(name) {
+  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+}
 
 function submitHandler() {
     var $submitButton = $('#submitButton');
@@ -37,9 +42,16 @@ function loadOptions() {
 	
 }
 
-function showHideImagesByPlatform(){
+function showHideImagesByPlatform(platform){
 	
-	var platform = "basalt";
+	//var platform = "basalt";
+	if(platform=="aplite" || platform=="basalt" || platform=="chalk"){
+		//nice!
+	}
+	else{
+		platform = "basalt";
+	}
+	
 	
 	var x = document.getElementsByTagName("img");
 	var i;
@@ -47,17 +59,18 @@ function showHideImagesByPlatform(){
 		var img = x[i];
 		//if (img.name.search(platform) < 0 ){
 			//img.style.visibility = 'hidden';
-			//img.style.align = 'center';
 		//}
 		img.src = platform + "-" + i.toString() + ".png";
-		//img.style.class = (platform == "chalk" ? "shrinksq" : "shrink");
+		img.style.class = (platform == "chalk" ? "shrinksq" : "shrink");
+		/*
 		if(platform == "chalk"){
 			img.style.class="shrinksq";
 		}
 		else{
 			img.style.class="shrink";
 		}
-		console.log("img.src="+img.src + ", img.style.class=" + img.style.class);
+		*/
+		console.log("img.src=" + img.src + ", img.style.class=" + img.style.class);
 	}
 	
 
