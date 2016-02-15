@@ -1,6 +1,5 @@
 ﻿(function () {
     loadOptions();
-    //showHideImagesByPlatform("chalk");
 	showHideImagesByPlatform(getURLParameter("platform"));
 	submitHandler();
 })();
@@ -26,7 +25,6 @@ function loadOptions() {
     
     var $slantDirectionNumber = $('#slantDirectionNumber');
     var $backgroundImageSelection = $('#backgroundImageSelection');
-	//var $bgPatternRadioButton = $('#bgPatternRadioButton');  
 	var $bgPatternRadioButton = $('input[name="radio-1"]:checked').val();
 	
 
@@ -35,7 +33,6 @@ function loadOptions() {
     
         $slantDirectionNumber[0].value = localStorage.slantDirectionNumber;
         $backgroundImageSelection[0].value = localStorage.backgroundImageSelection;
-		//$bgPatternRadioButton[0].value = localStorage.bgPatternRadioButton;
 		$bgPatternRadioButton[0].value = $('input[name="radio-1"][value="' + localStorage.bgPatternRadioButton + '"]').prop('checked', true);
     }
 	
@@ -44,7 +41,6 @@ function loadOptions() {
 
 function showHideImagesByPlatform(platform){
 	
-	//var platform = "basalt";
 	if(platform=="aplite" || platform=="basalt" || platform=="chalk"){
 		//nice!
 	}
@@ -57,23 +53,10 @@ function showHideImagesByPlatform(platform){
 	var i;
 	for (i = 0; i < x.length; i++) {
 		var img = x[i];
-		//if (img.name.search(platform) < 0 ){
-			//img.style.visibility = 'hidden';
-		//}
 		img.src = platform + "-" + i.toString() + ".png";
-		img.style.class = (platform == "chalk" ? "shrinksq" : "shrink");
-		/*
-		if(platform == "chalk"){
-			img.style.class="shrinksq";
-		}
-		else{
-			img.style.class="shrink";
-		}
-		*/
-		console.log("img.src=" + img.src + ", img.style.class=" + img.style.class);
+		img.style.width = (platform == "chalk" ? "84px" : "72px");		
+		img.style.height = "84px";
 	}
-	
-
 }
 
 function getAndStoreConfigData() {
