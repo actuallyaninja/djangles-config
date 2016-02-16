@@ -8,9 +8,12 @@ function getURLParameter(name) {
   return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
 }
 
+
 function submitHandler() {
     var $submitButton = $('#submitButton');
+	var $submitButtonTop = $('#submitButtonTop');
 
+	
     $submitButton.on('click', function () {
         console.log('Submit');
 
@@ -18,6 +21,15 @@ function submitHandler() {
         document.location = return_to + encodeURIComponent(JSON.stringify(getAndStoreConfigData()));
 
     });
+	
+	$submitButtonTop.on('click', function () {
+        console.log('Submit');
+
+        var return_to = getQueryParam('return_to', 'pebblejs://close#');
+        document.location = return_to + encodeURIComponent(JSON.stringify(getAndStoreConfigData()));
+
+    });
+
 }
 
 function loadOptions() {
