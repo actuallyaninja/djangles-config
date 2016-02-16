@@ -21,3 +21,7 @@ html{
 	width:84px;
 	height:84px;
 }
+
+.test{
+	display:inline-table;
+}
