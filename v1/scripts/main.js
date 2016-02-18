@@ -53,6 +53,8 @@ function loadOptions() {
 
 function showHideImagesByPlatform(platform){
 	
+	var imgBasePath = "../v1/images/"
+	
 	if(platform=="aplite" || platform=="basalt" || platform=="chalk"){
 		//nice!
 	}
@@ -65,7 +67,7 @@ function showHideImagesByPlatform(platform){
 	var i;
 	for (i = 0; i < x.length; i++) {
 		var img = x[i];
-		img.src = platform + "-" + i.toString() + ".png";
+		img.src = imgBasePath + platform + "-" + i.toString() + ".png";
 		img.style.width = (platform == "chalk" ? "84px" : "72px");		
 		img.style.height = "84px";
 	}
