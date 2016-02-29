@@ -8,10 +8,6 @@
   text-align: center;
 }
 
-html{
-    font-size: 100%;
-}
-
 .shrink{
 	width:72px;
 	height:84px;
@@ -26,3 +22,12 @@ skinny{
 	width:150px;
 }
 
+table {
+	width: 100%;
+}
+
+.item-styled-radio{
+	/*right: 45px;*/
+	right: 20%;
+	
+}
