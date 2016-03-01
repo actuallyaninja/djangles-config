@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Djangles Settings</title>
+    <link rel='stylesheet' type='text/css' href='../v2/css/slate.css'>
+    <link rel='stylesheet' type='text/css' href='../v2/css/style.css'>
+</head>
+<body>
+    <br />
+    <h1 class='title'>Djangles<br /><br />Watchface<br />Configuration</h1>
+    <div class='item-container'>
+            <div class='button-container'>
+                <input id='submitButtonTop' type='button' class='item-button' value='SAVE'>
+            </div>
+        </div>
+
+    <div class='item-container'>
+        <div class='item-container-header'>SLANT DIRECTION</div>
+        
+            <div class='item-container-content'>
+                
+                <label class="item" >Which hand is</br>your watch on?
+                    <select id="slantDirectionNumber" name="whichSlant" dir='rtl' class="item-select">                    
+                        <option class="item-select-option" value=1>Left</option>					
+                        <option class="item-select-option" value=2 selected>Right							
+						</option>
+                    </select>
+                </label>
+               
+            </div>
+
+        
+		<div class="item-container-header">Background Pattern</div>
+        
+          
+		<div class="item-container-content">
+		
+		<div class="skinny">
+		
+		
+			<table>
+				<tr>
+					<td>
+						<label class="item">
+							<img name="img-0" src="../v2/images/basalt-0.png" />
+							<input type="radio" class="item-radio" id="bgPatternRadioButton" name="radio-1" value="0">						
+						</label>
+					</td>
+					<td>
+						<label class="item">
+							<img name="img-1" src="../v2/images/basalt-1.png" />
+							<input type="radio" class="item-radio" id="bgPatternRadioButton" name="radio-1" value="1" checked>	
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label class="item">
+							<img name="img-2" src="../v2/images/basalt-2.png" />
+							<input type="radio" class="item-radio" id="bgPatternRadioButton" name="radio-1" value="2">
+						</label>
+					</td>
+					<td>
+						<label class="item">
+							<img name="img-3" src="../v2/images/basalt-3.png" />
+							<input type="radio" class="item-radio" id="bgPatternRadioButton" name="radio-1" value="3">
+						</label>
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+						<label class="item">
+							<img name="img-4" src="../v2/images/basalt-4.png" />
+							<input type="radio" class="item-radio" id="bgPatternRadioButton" name="radio-1" value="4">
+						</label>
+					</td>
+					<td>
+						<label class="item">
+							<img name="img-5" src="../v2/images/basalt-5.png" />
+							<input type="radio" class="item-radio" id="bgPatternRadioButton" name="radio-1" value="5">
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label class="item">
+							<img name="img-6" src="../v2/images/basalt-6.png" />
+							<input type="radio" class="item-radio" id="bgPatternRadioButton" name="radio-1" value="6">
+						</label>
+					</td>
+					<td>
+						<label class="item">
+							<img name="img-7" src="../v2/images/basalt-7.png" />
+							<input type="radio" class="item-radio" id="bgPatternRadioButton" name="radio-1" value="7">
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<td>				
+						<label class="item">
+							<img name="img-8" src="../v2/images/basalt-8.png" />
+							<input type="radio" class="item-radio" id="bgPatternRadioButton" name="radio-1" value="8">
+						</label>
+					</td>
+					<td>
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+        </div>
+       
+		<div class="item-container-header">Animation</div>
+			<div class="item-container-content">
+				<label class='item'>
+					Enable startup animations?
+					<input id='startupAnimCheckbox' type='checkbox' class='item-checkbox' checked>
+				</label>
+			</div>		
+		</div>
+	   
+        <div class='item-container-footer'>
+                    Click SAVE for your choices to take effect.
+        </div>
+        </div>
+
+        <div class='item-container'>
+            <div class='button-container'>
+                <input id='submitButton' type='button' class='item-button' value='SAVE'>
+            </div>
+        </div>
+
+        <script src='../v2/scripts/slate.js'></script>
+        <script src='../v2/scripts/main.js'></script>
+</body>
+</html>
