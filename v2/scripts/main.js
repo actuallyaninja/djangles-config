@@ -38,13 +38,14 @@ function loadOptions() {
     var $slantDirectionNumber = $('#slantDirectionNumber');
 	var $bgPatternRadioButton = $('input[name="radio-1"]:checked').val();
 	var $startupAnimationEnabled = $('#startupAnimCheckbox');
-
+	var $showDate = $('#showDate');
 
     if (localStorage.slantDirectionNumber) {
     
         $slantDirectionNumber[0].value = localStorage.slantDirectionNumber;
 		$bgPatternRadioButton[0].value = $('input[name="radio-1"][value="' + localStorage.bgPatternRadioButton + '"]').prop('checked', true);
 		$startupAnimationEnabled[0].checked = localStorage.startupAnimationEnabled === 'true';
+		$showDate[0].checked = localStorage.showDate === 'true';
     }
 	
 	
@@ -78,17 +79,20 @@ function getAndStoreConfigData() {
     var $slantDirectionNumber = $('#slantDirectionNumber');  
 	var $bgPatternRadioButton = $('input[name="radio-1"]:checked').val();
 	var $startupAnimationEnabled = $('#startupAnimCheckbox');
+	var $showDate = $('#showDate');
     
     var options = {
         
         slantDirectionNumber: $slantDirectionNumber.val(),
 		bgPatternRadioButton: $bgPatternRadioButton,
-		startupAnimationEnabled: $startupAnimationEnabled[0].checked
+		startupAnimationEnabled: $startupAnimationEnabled[0].checked,
+		showDate: $showDate[0].checked
     };
 
     localStorage.slantDirectionNumber = options.slantDirectionNumber;
 	localStorage.bgPatternRadioButton = options.bgPatternRadioButton;
 	localStorage.startupAnimationEnabled = options.startupAnimationEnabled;
+	localStorage.showDate = options.showDate;
 
     console.log('Got options: ' + JSON.stringify(options));
     return options;
