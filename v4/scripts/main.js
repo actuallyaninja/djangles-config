@@ -1,6 +1,7 @@
 ﻿(function () {
     loadOptions();
 	showHideImagesByPlatform(getURLParameter("platform"));
+	showHideLabelsByPlatform(getURLParameter("platform"));
 	submitHandler();
 })();
 
@@ -51,6 +52,12 @@ function loadOptions() {
 	
 }
 
+function showHideLabelsByPlatform(platform){
+	if(platform=="aplite"){
+		$(".hideit").toggle();
+	}
+}
+
 function showHideImagesByPlatform(platform){
 	
 	var imgBasePath = "../v4/images/"
@@ -68,8 +75,10 @@ function showHideImagesByPlatform(platform){
 	for (i = 0; i < x.length; i++) {
 		var img = x[i];
 		img.src = imgBasePath + platform + "-" + i.toString() + ".png";
-		img.style.width = (platform == "chalk" ? "84px" : "72px");		
-		img.style.height = "84px";
+		//img.style.width = (platform == "chalk" ? "84px" : "72px");		
+		//img.style.height = "84px";
+		img.style.width = (platform == "chalk" ? "56px" : "48px");		
+		img.style.height = "56px";
 	}
 }
 
